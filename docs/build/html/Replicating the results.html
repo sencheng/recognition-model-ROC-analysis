@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replicating the results &#8212; Algorithmic model of recognition memory  documentation</title>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contact" href="Contact.html" />
+    <link rel="prev" title="Running the tests" href="Running the tests.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Algorithmic model of recognition memory  documentation</span></a></h1>
+        <h2 class="heading"><span>Replicating the results</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="Running the tests.html">Running the tests</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Contact.html">Contact</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <div class="section" id="replicating-the-results">
+<h1>Replicating the results<a class="headerlink" href="#replicating-the-results" title="Permalink to this headline">¶</a></h1>
+<p>Once you are all set up and ready, you can test whether the extended code actually runs by executing the <code class="docutils literal notranslate"><span class="pre">recognition-memory/start/test</span></code> file in the terminal. This file activates the virtual environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">OOC</span><span class="o">/</span><span class="n">Code</span>
+<span class="n">source</span> <span class="n">activate</span> <span class="n">rec</span><span class="o">-</span><span class="n">mem</span>
+</pre></div>
+</div>
+<p>and runs the main simulation routine for 20 trials and saves the data in the corresponding directories:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">main_test</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>After the Python simulations are finished, the Yonelinas model is used to fit the data. This part of the code is performed in Matlab:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matlab</span> <span class="o">--</span><span class="n">nodisplay</span> <span class="o">&lt;</span>  <span class="n">utils</span><span class="o">/</span><span class="n">dpsd_fit_test</span><span class="o">.</span><span class="n">m</span><span class="o">&gt;</span> <span class="n">out</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<p>Finally, the results are analyzed and the plots are saved in the directory <code class="docutils literal notranslate"><span class="pre">recognition-memory/OOC/Figures</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">analysis_test</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently the matlab output plotting is disable to avoid problems with the rednering. If you want to explore the output figure, please enable it by uncommenting the corresponding section at the end of the following file:  <code class="docutils literal notranslate"><span class="pre">recognition-memory/roc-toolbox/main/roc_solver1.m</span></code> and use <code class="docutils literal notranslate"><span class="pre">matlab</span> <span class="pre">-softwareopengl</span></code> to start  matlab.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="Running the tests.html">Running the tests</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Contact.html">Contact</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Olya Hakobyan, Sen Cheng.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

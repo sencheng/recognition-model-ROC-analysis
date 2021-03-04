@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How the code works &#8212; Algorithmic model of recognition memory  documentation</title>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Running the tests" href="Running the tests.html" />
+    <link rel="prev" title="Getting started" href="Getting started.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Algorithmic model of recognition memory  documentation</span></a></h1>
+        <h2 class="heading"><span>How the code works</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="Getting started.html">Getting started</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Running the tests.html">Running the tests</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <div class="section" id="how-the-code-works">
+<h1>How the code works<a class="headerlink" href="#how-the-code-works" title="Permalink to this headline">¶</a></h1>
+<p>The file <code class="docutils literal notranslate"><span class="pre">toy_example.py</span></code> is a good start to get intuitive understanding of the model. After importing all the relevant modules, the simulation parameters are initialized by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">params</span><span class="o">=</span><span class="n">sim_params</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The default parameters can be inspected in <code class="docutils literal notranslate"><span class="pre">utils/set_params.py</span></code>. However, you can modify the parameters the way you want using a dictionary containing the attribute names and values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">params_change</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;noise&#39;</span><span class="p">:[</span><span class="mf">0.3</span><span class="p">],</span><span class="s1">&#39;trials&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;notes&#39;</span><span class="p">:</span><span class="s1">&#39;awesome simulation, the parameters of which should be remembered&#39;</span><span class="p">}</span>
+<span class="n">params</span><span class="o">.</span><span class="n">update_params</span><span class="p">(</span><span class="n">params_change</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For instance, the code above changes the memory <code class="docutils literal notranslate"><span class="pre">noise</span></code> value to 0.3 and sets the number of <code class="docutils literal notranslate"><span class="pre">trials</span></code> to 5.  If provided, the attribute <code class="docutils literal notranslate"><span class="pre">notes</span></code> makes sure that the simulation ID is stored in <code class="docutils literal notranslate"><span class="pre">/Log/notes.csv</span></code>. This allows to reanalyze important simulations, access and compare their parameters. Also, these are the simulations that are <strong>not</strong> subject to regular clean-ups performed using the file <code class="docutils literal notranslate"><span class="pre">/utils/clean_up.py</span></code>, which removes data and figures for simulations that are older than N days.</p>
+<p>Once the parameters are set, it’s time to load the stimuli. The PCA-reduced image representations from the neural net are stored in <code class="docutils literal notranslate"><span class="pre">/Input/dataset_faces.npy</span></code>. The class <code class="docutils literal notranslate"><span class="pre">input_patterns</span></code> loads the dataset, chooses the specified number of the stimuli and assigns them to target and lure probes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">input_patterns</span> <span class="o">=</span> <span class="n">inp</span><span class="o">.</span><span class="n">probes</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="n">probes</span> <span class="o">=</span> <span class="n">input_patterns</span><span class="o">.</span><span class="n">probe_faces</span><span class="p">()</span>
+<span class="n">input_patterns</span><span class="o">.</span><span class="n">probe_assignment</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Next, a memory system is initialized and scaling is performed for studied and test items:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mem_system</span><span class="o">=</span><span class="n">mem</span><span class="o">.</span><span class="n">memory_system</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mem_system</span><span class="o">.</span><span class="n">perform_scaling</span><span class="p">(</span><span class="n">input_patterns</span><span class="o">.</span><span class="n">study_all</span><span class="p">,</span> <span class="s1">&#39;study&#39;</span><span class="p">)</span>
+<span class="n">mem_system</span><span class="o">.</span><span class="n">perform_scaling</span><span class="p">(</span><span class="n">input_patterns</span><span class="o">.</span><span class="n">test</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, the recognition memory test is performed on the loaded stimuli for all noise levels. The memory tests is done for memory systems with different scaling values, for lures with different degrees of similarity to the targets (params.offset):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">nn</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">noise</span><span class="p">:</span>
+   <span class="n">memory_test_basic</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">mem_system</span><span class="p">,</span><span class="n">params</span><span class="o">.</span><span class="n">offset</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">nn</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">params.save_metadata</span></code> attribute is True, metadata will be stored. This basically means that the <code class="docutils literal notranslate"><span class="pre">params</span></code> object is pickled, so that we can later load it and have the exact parameter configuration of the given simulation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">save_metadata</span><span class="p">:</span>
+   <span class="n">save_data</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="s1">&#39;metadata_&#39;</span><span class="o">+</span><span class="n">params</span><span class="o">.</span><span class="n">simID</span><span class="p">,</span><span class="n">file_format</span><span class="o">=</span><span class="s1">&#39;pkl&#39;</span><span class="p">,</span><span class="n">folder</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;/Log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is extremely helpful when trying to replicate the results. In addition, the file <code class="docutils literal notranslate"><span class="pre">utils/compare_params</span></code> can actually compare two simulations and point out what has changed.</p>
+<p>Note that the simulation data is always stored in <code class="docutils literal notranslate"><span class="pre">/Data/simID</span></code> and the metdata are stored in <code class="docutils literal notranslate"><span class="pre">/Log/</span></code>.
+Obviously, the full model has more conditions and operations but this example should give you a fist glance on some of the core functions.</p>
+<p>Good luck with the tests and have fun exploring the code! :)</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="Getting started.html">Getting started</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Running the tests.html">Running the tests</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Olya Hakobyan, Sen Cheng.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

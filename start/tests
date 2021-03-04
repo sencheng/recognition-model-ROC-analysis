@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd ../OOC/Code
+source activate rec-mem
+python main_test.py
+matlab --nodisplay <  utils/dpsd_fit_test.m> out.log
+python analysis_test.py
+
+

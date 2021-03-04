@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo 'Creating virtual environment...'
+conda env create -f environment.yml
+echo 'Activating the virtual environment...'
+source activate rec-mem 
+echo 'Done!'
+

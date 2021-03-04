@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input package &#8212; Algorithmic model of recognition memory  documentation</title>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Algorithmic model of recognition memory  documentation</span></a></h1>
+        <h2 class="heading"><span>Input package</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <div class="section" id="input-package">
+<h1>Input package<a class="headerlink" href="#input-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="input-input-info-module">
+<h2>Input.input_info module<a class="headerlink" href="#input-input-info-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-Input.patterns">
+<span id="input-patterns-module"></span><h2>Input.patterns module<a class="headerlink" href="#module-Input.patterns" title="Permalink to this headline">¶</a></h2>
+<p>This module loads the stimuli and assigns them to targets and lures</p>
+<dl class="py class">
+<dt id="Input.patterns.probes">
+<em class="property">class </em><code class="sig-prename descclassname">Input.patterns.</code><code class="sig-name descname">probes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Input.patterns.probes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="Input.patterns.probes.probe_assignment">
+<code class="sig-name descname">probe_assignment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lure_morph</span><span class="o">=</span><span class="default_value">[- 1]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Input.patterns.probes.probe_assignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign the probes to targets and lures</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>morph</strong> (<em>lure</em>) – contains the morph level for lure items</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>study and test items</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Input.patterns.probes.probe_faces">
+<code class="sig-name descname">probe_faces</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Input.patterns.probes.probe_faces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load PCA-reduced input patterns</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seed</strong> (<em>int</em>) – random seed for shuffling the input, updates in each trial to have
+different input arrangements</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>probes</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Input">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Input" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Olya Hakobyan, Sen Cheng.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

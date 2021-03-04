@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting started &#8212; Algorithmic model of recognition memory  documentation</title>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How the code works" href="How the code works.html" />
+    <link rel="prev" title="Our approach" href="Our approach.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Algorithmic model of recognition memory  documentation</span></a></h1>
+        <h2 class="heading"><span>Getting started</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="Our approach.html">Our approach</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="How the code works.html">How the code works</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <div class="section" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>The main code is written in Python 3.6.8. We recommend using the Anaconda environment since most of the packages used in our code are installed in Anaconda. Please download the Python 3.6 Version of Anaconda here: <a class="reference external" href="https://www.anaconda.com/download/#linux">https://www.anaconda.com/download/#linux</a> and follow the installation steps.</p>
+<p>The directory <strong>start</strong> is a good place to get started with the code and run the tests.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> contains anaconda environment, in which the project was created, create an instance by running the following command. It may take a while. If you want, you can change the first line in the file to rename your environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<p>Then, activate the environment by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">activate</span> <span class="n">rec</span><span class="o">-</span><span class="n">mem</span> <span class="p">(</span><span class="ow">or</span> <span class="n">the</span> <span class="n">name</span> <span class="n">you</span> <span class="n">gave</span> <span class="n">to</span> <span class="n">the</span> <span class="n">project</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can perform all these steps automatically by running the file <code class="docutils literal notranslate"><span class="pre">`get_started`</span></code>.</p>
+<p>You can then bring up the spyder environment by simply typing <code class="docutils literal notranslate"><span class="pre">spyder</span></code> in the terminal. Feel free to use any other environment or run the code directly in the terminal.</p>
+<p>For Matlab simulations, the ROC-Toolbox by Koen et al. 2017 (<a class="reference external" href="https://github.com/jdkoen/roc_toolbox">https://github.com/jdkoen/roc_toolbox</a>) is used. Our current simulations run in Matlab17a. Depending on the Matlab version, there may be some issues with graphics, which sometimes annoyingly manifest themselves by freezing the code. In that case, we recommend using the OpenGL rendering. For that you can start the Matlab by entering <code class="docutils literal notranslate"><span class="pre">matlab</span> <span class="pre">-softwareopengl</span></code> in the command line (in Linux).</p>
+<p>Once the virtual environment is set and Matlab installed, you can proceed to running the tests.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="Our approach.html">Our approach</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="How the code works.html">How the code works</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Olya Hakobyan, Sen Cheng.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,370 @@
+05-09_22:38:39,Pat_sep upper value decreased
+05-13_14:27:17,List length
+05-13_19:19:37,BPS
+05-13_21:32:48,List length
+05-13_21:59:31,List length: very long
+05-14_00:08:08,30-100trials
+05-14_15:01:34,40-100trials
+05-14_15:30:58,strong items not used in test
+05-14_18:26:53,cue-target100
+05-14_20:42:49,cue_target200
+05-14_21:32:48,cue_target200+ more noise levels
+05-16_11:37:59,"Cary et al 2008, with noise"
+05-17_11:24:31,30-500 trials
+05-17_21:12:52,30-500trials-noise5
+05-17_23:35:18,30-500-thr6
+05-18_18:31:20,absolute
+05-18_19:07:56,absolute
+05-18_23:28:44,"50-100trials, 1 added"
+05-18_23:55:59,30-50-1added
+05-19_00:40:54,30-200trials-1added
+05-18_14:18:59,the unfortunate one
+05-19_06:20:24,kinda works with absolulte threshold
+05-21_00:00:33,seems to work again
+05-21_20:34:30,show for meeting
+05-22_16:37:40,working example
+05-22_17:37:25,30-100trials-fam-impaired
+05-22_21:44:15,weak
+05-22_21:46:25,strong
+05-22_23:15:06,list strength simulations
+06-04_21:06:44,combined100
+06-05_18:09:46,closest confidence
+06-05_19:13:51,"combined, usual test"
+06-05_20:25:23,seems to work with better fit
+06-11_15:51:43,"200 trials, good fit, combined"
+06-12_10:49:18,"200, combined-less fa but difference bigger"
+06-12_10:49:18,"200, combined-less fa "
+06-12_13:40:10,"200, higher noise"
+06-13_14:33:46,"200, from low to high noise"
+06-19_14:35:06,bps100
+06-21_13:21:23,closest threshold
+06-23_00:46:13,different shapes
+06-23_16:56:45,works with Symm
+06-24_12:11:43,0.013
+06-24_12:23:30,0.0135
+06-24_20:01:10,"works with Rn:0 too, distance histogramed, 0.015 added"
+06-24_21:39:38,"combined included, 0.015 added"
+06-24_23:25:44,0.004 sigma to distance before decision
+06-24_23:30:14,0.008 sigma to distance before decision
+06-24_23:39:42,"0.015 100 trials, seems worse"
+06-26_11:57:27,"histogram, from first on, nothing added"
+06-26_12:20:24,vanilla case
+06-26_14:03:12,"closest,np.histogram(distances,bins=N_thr+1)[1]+0.015"
+06-26_14:31:49,"closest,thr_range=np.linspace(0.008,maximum,N_thr)+0.015"
+06-26_15:11:44,"thr_range=np.linspace(0.008,maximum,N_thr)+0.015",doesn't work 
+06-26_15:17:16,vanilla:100
+06-26_15:28:39,"np.histogram(distances,bins=N_thr+1)[1][1:]+0.015"
+06-26_15:46:47,"thr_range=np.histogram(distances,bins=N_thr)[1]+0.015"
+06-26_16:02:21,"np.histogram(distances,bins=N_thr+1)[1]+0.015"
+06-26_17:39:29,"thr_range=np.histogram(distances,bins=N_thr+1)[1][1:],thr_range=thr_range+(width*0.7)"
+06-26_19:55:03,"thr_range=np.linspace(0.008,maximum,N_thr),dist<=thr_range[thr]+np.random.normal(width,0.001)"
+06-27_19:35:12,"list length, 100 trials, Cary et al"
+06-27_22:02:25,first systematic threshold noise
+06-27_22:36:21,"decision noise,100 trials"
+06-27_23:49:05,"50 trials, width*np.range(0,noise)"
+06-28_13:41:15,"np.random.normal(width*params.decision_noise,0.001)"
+07-01_13:57:39,"multiply trials of the same noise levels,width*params.decision_noise,0.001"
+07-01_19:55:43,50+olap1
+07-01_20:50:24,"20, olap=2,thr_range=np.histogram(distances,bins=6)[1][1:]"
+07-02_11:40:10,"30,2,np.histogram(distances,bins=7)[1][1:]"
+07-02_11:46:11, '30, 9, np.histogram(distances,bins=7)[1][1:]'
+07-02_16:12:53,"30,np.histogram(distances,bins=7)[1][1:-1],2"
+07-02_16:19:51,"30,np.histogram(distances,bins=7)[1][1:-1],9"
+07-02_16:45:39,"30,2,100 trials"
+07-03_14:18:49,"list strength,100, something weird is going on"
+07-03_15:43:06,"list strength, 50"
+07-04_11:44:49,"np.random.normal(0.005,0.0001), 5x100trials"
+07-04_14:18:33,"0.005 added, 5x100"
+07-04_15:39:53,1
+07-04_15:44:04,3
+07-04_15:48:34,3
+07-04_16:28:32,100-1
+07-04_16:34:56,100-2
+07-04_16:45:12,100-3
+07-04_23:44:33,"list strength,100, thr_range=np.linspace(0.008,maximum,N_thr)"
+07-05_23:50:24,list length to test dpsd
+07-09_01:45:41,length match 200
+07-09_03:54:48,list strength 200
+07-09_00:33:11,list length 200
+07-09_04:46:35, decision 200
+07-10_14:06:36,"100 trials, the default: R and F dissociation not good"
+07-11_11:46:51,"vanilla case, 50 trials, better dissociation"
+07-11_16:40:56,vanilla with 0.008 decision noise added in distance
+07-15_13:26:31,"vanilla,200"
+07-15_15:19:20,"offset to threshold:0.011, works for some but not systematic"
+07-15_17:35:29,"200 trials, decisions"
+07-16_11:12:28,noise to items before decision, trial changed to retrieval aferwards
+07-16_11:38:43,noise in trial based on width
+07-16_18:55:05,"cortex alone, 200 trials, noise reduced"
+07-17_11:37:30,"100 trials, offset"
+07-18_16:30:52,"100,decision noise"
+07-19_16:13:09,decision noise=0.011
+07-19_18:03:18,"histogram from zero+add 0.011, N_thr=12"
+07-22_13:50:33,200 trials with linspace 0
+07-20_01:01:52,histogram+multiple noise levels
+07-22_15:09:19,"hist,offset, 200, works for one"
+07-24_14:27:51,200 with WM noise
+07-24_14:28:46,"200 with WM noise, liberal offset changed"
+07-24_20:21:12,"offset as 0.4th of the width, 200"
+07-25_22:37:22,"200 many noise levels, seems to work"
+07-29_15:25:54,cortex 200 with less noise and many decision criteria
+07-30_13:58:12,100x less noise
+07-30_20:42:56,200+less noise
+07-31_14:01:21, cortex
+07-31_22:17:23,higher pat_sep
+08-08_11:06:13,"awesome simulation, the params of which should be remembered"
+08-14_18:15:23,"awesome simulation, the params of which should be remembered"
+08-14_18:27:45,"awesome simulation, the params of which should be remembered"
+09-04_14:43:34,length-100
+09-04_19:47:48,length-200
+10-12_23:26:46,"offset,100,bias=0.006"
+10-13_15:40:44,100-overlap1
+10-13_15:40:51,100-overlap9
+10-13_18:13:22,random_input1
+10-13_18:13:14,random_input2
+10-13_18:41:30,random_input3
+10-13_19:23:53,random_input4
+11-12_20:09:39,list length 100
+12-02_15:28:23,200+strength
+12-03_21:36:45,"strength-200,works"
+12-03_22:33:53,strength: 200 repetition
+12-11_16:50:53,"new ordering, strength 200, reduced noise"
+12-11_19:44:13,"list_strength, 200 noise reduced, no differences in fa for most conditions"
+12-11_21:00:29,list strength 200, 0.009, noise reduced
+12-12_13:48:58,"strength, 200,0.009, multiple traces"
+12-12_16:06:09,"list strength 200, 0.009, multiple traces:5"
+12-17_17:40:19,list length 200, overlap9, reduced noise
+12-17_18:05:11, list length in amnesia, 200, bias offset=0.009
+12-18_12:07:58,overlap and list length, 200, reduced noise
+12-18_12:49:44, 200 list length, wider noise range
+
+12-18_15:19:55,length match
+12-22_20:06:12, item 200, offset=10
+
+12-22_23:56:15,strength
+12-22_23:56:15,strength
+12-22_23:56:15,strength
+12-22_23:56:15,strength
+12-22_23:56:28,item
+12-22_23:56:45,liberal_bias
+12-22_23:56:45,liberal_bias
+12-22_23:56:45,liberal_bias
+12-22_23:56:45,liberal_bias
+12-22_23:56:45,liberal_bias
+12-22_23:58:48,strengthoffset:10
+12-22_23:58:48,strengthoffset:10
+12-22_23:58:48,strengthoffset:10
+12-22_23:58:48,strengthoffset:10
+12-23_00:10:39,itemoffset:10
+12-23_00:25:22,liberal_biasoffset:10
+12-23_00:25:22,liberal_biasoffset:10
+12-23_00:25:22,liberal_biasoffset:10
+12-23_00:25:22,liberal_biasoffset:10
+12-23_00:25:22,liberal_biasoffset:10
+12-23_02:12:46,strengthoffset:8
+12-23_02:12:56,strengthoffset:8
+12-23_02:13:10,strengthoffset:8
+12-23_02:13:19,strengthoffset:9
+12-23_02:12:56,strengthoffset:8
+12-23_02:13:19,strengthoffset:9
+12-23_02:12:56,strengthoffset:8
+12-23_02:13:19,strengthoffset:9
+12-23_02:12:56,strengthoffset:8
+12-23_02:13:19,strengthoffset:9
+12-23_02:28:34,itemoffset:9
+12-23_02:28:42,itemoffset:8
+12-23_02:46:40,liberal_biasoffset:9
+12-23_02:47:18,liberal_biasoffset:8
+12-23_02:46:40,liberal_biasoffset:9
+12-23_02:47:18,liberal_biasoffset:8
+12-23_02:46:40,liberal_biasoffset:9
+12-23_02:47:18,liberal_biasoffset:8
+12-23_02:46:40,liberal_biasoffset:9
+12-23_02:47:18,liberal_biasoffset:8
+12-23_02:46:40,liberal_biasoffset:9
+12-23_02:47:18,liberal_biasoffset:8
+01-02_20:25:13,liberal_biasoffset:10
+01-02_20:25:13,liberal_biasoffset:10
+01-02_20:25:13,liberal_biasoffset:10
+01-02_20:25:13,liberal_biasoffset:10
+01-02_20:25:13,liberal_biasoffset:10
+01-02_21:48:15,liberal_biasoffset:10
+01-02_21:48:15,liberal_biasoffset:10
+01-02_21:48:15,liberal_biasoffset:10
+01-02_21:48:15,liberal_biasoffset:10
+01-02_21:48:15,liberal_biasoffset:10
+01-02_21:48:15,liberal_biasoffset:10
+01-02_21:48:15,liberal_biasoffset:10
+01-02_21:48:15,liberal_biasoffset:10
+01-02_21:48:15,liberal_biasoffset:10
+01-02_21:48:15,liberal_biasoffset:10
+01-04_21:31:50,liberal_biasoffset:10
+01-04_21:33:30,liberal_biasoffset:10
+01-04_21:34:07,liberal_biasoffset:10
+01-04_21:34:07,liberal_biasoffset:10
+01-04_21:34:07,liberal_biasoffset:10
+01-04_21:34:07,liberal_biasoffset:10
+01-04_21:34:07,liberal_biasoffset:10
+01-04_21:34:07,liberal_biasoffset:10
+01-04_21:34:07,liberal_biasoffset:10
+01-04_21:34:07,liberal_biasoffset:10
+01-04_21:34:07,liberal_biasoffset:10
+01-04_21:34:07,liberal_biasoffset:10
+01-04_21:34:45,itemoffset:10
+01-04_21:49:48,liberal_biasoffset:10
+01-04_21:49:48,liberal_biasoffset:10
+01-04_21:49:48,liberal_biasoffset:10
+01-04_21:49:48,liberal_biasoffset:10
+01-04_21:49:48,liberal_biasoffset:10
+01-04_21:49:48,liberal_biasoffset:10
+01-04_21:49:48,liberal_biasoffset:10
+01-04_21:49:48,liberal_biasoffset:10
+01-04_21:49:48,liberal_biasoffset:10
+01-04_21:49:48,liberal_biasoffset:10
+01-07_23:39:00,itemoffset:10
+01-08_01:04:37,lengthoffset:10
+01-08_01:04:37,lengthoffset:10
+01-08_01:04:37,lengthoffset:10
+01-08_01:04:37,lengthoffset:10
+01-08_01:04:37,lengthoffset:10
+01-09_23:17:19,"strengthoffset:10,reduced noise"
+01-09_23:27:05,"strengthoffset:10,reduced noise"
+01-12_16:07:56,"list strength:multiple traces,100,5"
+01-12_19:31:23,list length:0 bias
+01-12_19:31:23,list length:0 bias
+01-12_19:31:23,list length:0 bias
+01-12_19:31:23,list length:0 bias
+01-12_19:31:23,list length:0 bias
+01-12_21:28:51,list strength:reduced
+01-12_21:28:51,list strength:reduced
+01-12_21:28:51,list strength:reduced
+01-12_21:28:51,list strength:reduced
+01-12_21:37:58,list strength:reduced
+01-12_21:38:57,list strength:multiple traces: 7
+01-12_21:37:58,list strength:reduced
+01-12_21:37:58,list strength:reduced
+01-12_21:37:58,list strength:reduced
+01-12_21:38:57,list strength:multiple traces: 7
+01-12_21:38:57,list strength:multiple traces: 7
+01-12_21:38:57,list strength:multiple traces: 7
+01-30_22:42:21,overlap levels+100
+01-30_23:34:57,overlap+liberal bias
+02-05_12:26:58,"overlap+liberal bias:100, correct"
+02-05_18:02:56,overlap-bias-100-matched
+02-06_15:30:40,overlap-bias-100-matched
+02-06_15:59:06,euclidean-100}
+02-06_16:10:20,cosine
+02-06_21:36:19,cosine
+02-06_21:45:03,cosine
+03-11_11:09:33,cosine
+03-11_11:15:21,cosine
+03-25_16:46:46,cosine
+03-25_16:47:19,cosine
+03-25_16:48:23,cosine
+03-25_16:48:33,cosine
+03-25_17:00:15,cosine
+03-25_17:00:35,cosine
+03-25_17:00:52,cosine
+03-25_17:02:02,cosine
+03-25_17:02:44,cosine
+03-25_17:03:27,cosine
+03-25_17:04:15,cosine
+03-25_17:04:46,cosine
+03-25_17:05:18,cosine
+03-25_17:05:32,cosine
+03-25_17:05:51,cosine
+03-25_18:05:12,cosine
+03-25_18:05:51,cosine
+03-25_18:16:22,cosine
+03-25_18:16:33,cosine
+03-25_18:17:49,cosine
+03-25_18:21:22,cosine
+03-25_18:33:14,cosine
+03-25_18:34:23,cosine
+03-25_18:35:36,cosine
+03-25_18:36:54,cosine
+03-25_18:44:22,cosine
+03-25_18:58:01,cosine
+03-25_18:58:57,cosine
+03-25_19:00:49,cosine
+03-25_19:02:52,cosine
+03-25_19:09:16,cosine
+03-30_23:09:50,cosine
+03-30_23:10:18,cosine
+03-30_23:10:30,cosine
+03-30_23:11:03,cosine
+03-30_23:11:55,cosine
+03-30_23:16:20,cosine
+05-05_19:01:15,"overlap1, better sequence-" 
+05-05_19:51:34,"overlap1, better sequence+but nomatch"
+05-05_20:30:59,"overlap10, better sequence"
+05-11_12:55:25,"overlap5, better sequence"
+05-11_13:53:42,"overlap5, better sequence"
+05-11_14:17:22,"overlap5, better sequence"
+05-11_15:07:32,"overlap5, better sequence"
+05-11_15:10:56,"overlap2-4, better sequence"
+05-11_16:39:53,"overlap2, better sequence"
+05-11_16:40:24,"overlap2, better sequence"
+05-14_21:28:45,"overlap2, better sequence"
+05-14_21:29:11,"overlap2, better sequence"
+05-14_21:29:33,"overlap2, better sequence"
+07-08_15:13:49,"awesome simulation, the params of which should be remembered"
+01-05_14:56:04,indirect5-without thresholding
+01-05_15:06:01,indirect5-without thresholding-novel
+01-05_16:28:13,indirect5-assoc-thr-.35-novel
+01-05_16:37:33,indirect5-assoc-thr-.35-recombined
+01-07_01:01:55,"indirect5-assoc-thr-.35,item-thr-0.1-recombined-20trials"
+01-12_18:56:01,no item info used
+01-12_19:13:30,no item info used:novel
+01-13_06:40:30,"thr_assoc2,trials20 pairingrecombined"
+01-13_06:41:15,"thr_assoc:2,trials:20 pairing:novel"
+
+01-13_07:02:47,"thr_assoc:1,trials:20 pairing:novel"
+01-13_07:02:58,"thr_assoc:1,trials:20 pairing:recombined"
+
+01-14_04:48:43,"thr_assoc:-1,trials:10 pairing:recombined"
+01-14_05:59:26, "thr_assoc:-1,trials:10 pairing:novel"
+01-14_06:43:41,"thr_assoc:0.03,trials:10 pairing:novel"
+01-14_06:43:53,"thr_assoc:0.03,trials:10 pairing:recombined"
+
+01-14_06:59:12,"thr_assoc:0.04,trials:3 pairing:recombined"
+
+01-14_22:24:53,"awesome simulation, the params of which should be remembered"
+01-14_22:24:54,"awesome simulation, the params of which should be remembered"
+02-03_23:38:07,"recombined, both info used, assoc_bias varying"
+02-03_23:38:07,"recombined, both info used, assoc_bias varying"
+02-08_19:58:32,"awesome simulation, the params of which should be remembered"
+02-08_22:13:23,"awesome simulation, the params of which should be remembered"
+02-08_22:13:32,"awesome simulation, the params of which should be remembered"
+02-08_22:13:40,"awesome simulation, the params of which should be remembered"
+02-08_22:27:09,"awesome simulation, the params of which should be remembered"
+02-08_22:52:33,"awesome simulation, the params of which should be remembered"
+02-08_23:14:56,"awesome simulation, the params of which should be remembered"
+02-08_23:20:32,"awesome simulation, the params of which should be remembered"
+02-08_23:29:40,"awesome simulation, the params of which should be remembered"
+02-08_23:29:47,"awesome simulation, the params of which should be remembered"
+02-08_23:30:24,"awesome simulation, the params of which should be remembered"
+02-08_23:30:37,"awesome simulation, the params of which should be remembered"
+02-08_23:33:50,"awesome simulation, the params of which should be remembered"
+02-08_23:36:06,"awesome simulation, the params of which should be remembered"
+02-08_23:36:08,"awesome simulation, the params of which should be remembered"
+02-08_23:36:32,"awesome simulation, the params of which should be remembered"
+02-08_23:39:04,"awesome simulation, the params of which should be remembered"
+02-09_00:29:45,"awesome simulation, the params of which should be remembered"
+02-09_00:29:52,"awesome simulation, the params of which should be remembered"
+02-09_00:52:35,"awesome simulation, the params of which should be remembered"
+02-09_00:53:22,"awesome simulation, the params of which should be remembered"
+02-09_00:59:35,"awesome simulation, the params of which should be remembered"
+02-09_01:00:29,"awesome simulation, the params of which should be remembered"
+02-09_01:03:50,"awesome simulation, the params of which should be remembered"
+02-09_01:48:35,"awesome simulation, the params of which should be remembered"
+02-09_01:50:32,"awesome simulation, the params of which should be remembered"
+02-09_01:50:45,"awesome simulation, the params of which should be remembered"
+02-09_01:51:00,"awesome simulation, the params of which should be remembered"
+02-09_01:51:22,"awesome simulation, the params of which should be remembered"
+02-09_01:51:50,"awesome simulation, the params of which should be remembered"
+02-09_16:51:40,"awesome simulation, the params of which should be remembered"
+02-09_17:01:58,"awesome simulation, the params of which should be remembered"
+02-09_18:43:21,"awesome simulation, the params of which should be remembered"
+02-09_20:02:24,"awesome simulation, the params of which should be remembered"
+02-09_20:28:29,"awesome simulation, the params of which should be remembered"

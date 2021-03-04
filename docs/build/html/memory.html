@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memory package &#8212; Algorithmic model of recognition memory  documentation</title>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Algorithmic model of recognition memory  documentation</span></a></h1>
+        <h2 class="heading"><span>memory package</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <div class="section" id="memory-package">
+<h1>memory package<a class="headerlink" href="#memory-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="memory-combined-memory-module">
+<h2>memory.combined_memory module<a class="headerlink" href="#memory-combined-memory-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="memory-context-vector-module">
+<h2>memory.context_vector module<a class="headerlink" href="#memory-context-vector-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-memory.distance">
+<span id="memory-distance-module"></span><h2>memory.distance module<a class="headerlink" href="#module-memory.distance" title="Permalink to this headline">¶</a></h2>
+<p>This module handles distance metrics and threshold pleacemet</p>
+<dl class="py function">
+<dt id="memory.distance.set_metric">
+<code class="sig-prename descclassname">memory.distance.</code><code class="sig-name descname">set_metric</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dist_metric</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.distance.set_metric" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the metric for distance calculations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dist_metric</strong> (<em>string</em>) – which distance metric to use, e.g. corr (correlation distance),
+cosine, euclidean</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>distance measure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="memory.distance.set_threshold">
+<code class="sig-prename descclassname">memory.distance.</code><code class="sig-name descname">set_threshold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">distances</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.distance.set_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the threshold based on the input distances</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<em>class instance</em>) – contains simulation parameters</p></li>
+<li><p><strong>distances</strong> (<em>array_like</em>) – contains the relevant distance values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>thresholds</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-memory.mem">
+<span id="memory-mem-module"></span><h2>memory.mem module<a class="headerlink" href="#module-memory.mem" title="Permalink to this headline">¶</a></h2>
+<p>Contains the class for generating memory systems</p>
+<dl class="py class">
+<dt id="memory.mem.memory_system">
+<em class="property">class </em><code class="sig-prename descclassname">memory.mem.</code><code class="sig-name descname">memory_system</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.mem.memory_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a memory system with its parameters
+and memory operations, such as memory storage and retrieval</p>
+<dl class="py attribute">
+<dt id="memory.mem.memory_system.params">
+<code class="sig-name descname">params</code><a class="headerlink" href="#memory.mem.memory_system.params" title="Permalink to this definition">¶</a></dt>
+<dd><p>simulation parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>class object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="memory.mem.memory_system.scale">
+<code class="sig-name descname">scale</code><a class="headerlink" href="#memory.mem.memory_system.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>the scaling value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="memory.mem.memory_system.add_memory_noise">
+<code class="sig-name descname">add_memory_noise</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noise</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.mem.memory_system.add_memory_noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds noise to the stored memory items</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>noise</strong> (<em>float</em>) – the variance of the noise distribution</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the simulations of list strength, if mixed lists are tested,
+the first half of the target items is stored n times (params.mem_traces) or given smaller noise level,
+while the second half is only stored once or given the normal noise level. Otherwise, the number of the
+memory traces is given by params.mem_traces</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="memory.mem.memory_system.item_retrieval">
+<code class="sig-name descname">item_retrieval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noise</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.mem.memory_system.item_retrieval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs the retrieval of the items from memory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>noise</strong> (<em>float</em>) – the variance of the noise distribution</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="memory.mem.memory_system.perform_scaling">
+<code class="sig-name descname">perform_scaling</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">probes</span></em>, <em class="sig-param"><span class="n">probe_type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.mem.memory_system.perform_scaling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs scaling by multiplying each item vector by a scalar</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>probes</strong> (<em>array_like</em>) – contains all probes: targets and lures</p></li>
+<li><p><strong>probe_type</strong> (<em>string</em>) – indicates whether the items are for test or study</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="memory.mem.memory_system.strengthening">
+<code class="sig-name descname">strengthening</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">noise</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.mem.memory_system.strengthening" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-memory.run_tests">
+<span id="memory-run-tests-module"></span><h2>memory.run_tests module<a class="headerlink" href="#module-memory.run_tests" title="Permalink to this headline">¶</a></h2>
+<p>This method provides routines for performing memory tests and saving the results</p>
+<dl class="py function">
+<dt id="memory.run_tests.memory_test">
+<code class="sig-prename descclassname">memory.run_tests.</code><code class="sig-name descname">memory_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">mem_systems</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">col</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.run_tests.memory_test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run memory test for a given number of trials and average the results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<em>class instance</em>) – contains simulation parameters</p></li>
+<li><p><strong>mem_systems</strong> (<em>list of class instances</em>) – contains memory systems with different pattern separation values</p></li>
+<li><p><strong>comb</strong> (<em>list of class instances</em>) – contains memory systems combining the system with no pattern separation with the ones having different pattern separation values</p></li>
+<li><p><strong>row</strong><strong>,</strong><strong>col</strong> (<em>int</em>) – the row and column of the dataframe to store data to. Typically, row represents offset and col the noise level</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="memory.run_tests.memory_test_basic">
+<code class="sig-prename descclassname">memory.run_tests.</code><code class="sig-name descname">memory_test_basic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">mem_system</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">col</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.run_tests.memory_test_basic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run memory test for a given number of trials and average the results, a simplified version of memory_test</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<em>class instance</em>) – contains simulation parameters</p></li>
+<li><p><strong>mem_systems</strong> (<em>list of class instances</em>) – contains memory systems with different pattern separation values</p></li>
+<li><p><strong>row</strong><strong>,</strong><strong>col</strong> (<em>int</em>) – the row and column of the dataframe to store data to. Typically, row represents offset and col the noise level</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-memory.test_types">
+<span id="memory-test-types-module"></span><h2>memory.test_types module<a class="headerlink" href="#module-memory.test_types" title="Permalink to this headline">¶</a></h2>
+<p>This module contains simlations of different recognition memory tests</p>
+<dl class="py function">
+<dt id="memory.test_types.adjust_number">
+<code class="sig-prename descclassname">memory.test_types.</code><code class="sig-name descname">adjust_number</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">memory</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.test_types.adjust_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjusts the number of targets and lures to be used at test.
+If applied, only the first half of targets and lures are going to be used</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>memory</strong> (<em>class object</em>) – contains information about the given memory system</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>adjusted test probes and distances</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="memory.test_types.roc_test">
+<code class="sig-prename descclassname">memory.test_types.</code><code class="sig-name descname">roc_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">memory</span></em><span class="sig-paren">)</span><a class="headerlink" href="#memory.test_types.roc_test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recognition test with “confidence ratings”
+The distance value between the cue and the retrieved item is mapped
+to the next threshold (=confidence rating) larger than the distance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>memory</strong> (<em>class object</em>) – contains information about the given memory system</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-memory">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-memory" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Olya Hakobyan, Sen Cheng.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>
